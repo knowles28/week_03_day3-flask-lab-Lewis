@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Customer Order</title>
 </head>
 <body>
-
-    <h2>Order details</h2>
-
+    <header>
+        <h2>Order details</h2>
     
-    <p>{{ order.customer_name }}</p>
-    <p>{{ order.order_date }}</p>
-    <p>{{ order.quantity }}</p>
+    </header>
+    <section class="order-page-text">
+
+        <p><b>Name:</b>           {{ order.customer_name }}</p>
+        <p><b>Date:</b>           {{ order.order_date }}</p>
+        <p><b>Pizzas ordered:</b> {{ order.quantity }}</p>
+
+
+    </section>
+
 
     
 

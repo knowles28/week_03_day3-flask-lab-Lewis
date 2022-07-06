@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>Customer Orders</title>
-    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-
-        <h1>Customer Orders!</h1>
+    <header>
+    <h1>Recent Pizza Orders</h1>
+    <h4> &#8594 Below is a list of the current customer orders. Click on the order for more details!</h4>
+    </header>
     
+
+    <section class="orders-list row">
+
     {% for order in all_orders %}
-        <p><a href="/orders/{{ loop.index0 }}">Name: {{ order.customer_name }} | Date: {{ order.order_date }} | Quantity: {{ order.quantity }}</a></p>
+        <p class="orders"><a href="/orders/{{ loop.index0 }}"> <b>Name: {{ order.customer_name }}</b> <br> Date: {{ order.order_date }} <br> Pizzas ordered: {{ order.quantity }}</a></p>
     {% endfor %}
+
+    </section>
 
 </body>
 </html>
