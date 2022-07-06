@@ -10,7 +10,7 @@
     <h1>Customer Orders!</h1>
     
     {% for order in all_orders %}
-        <p>Name: {{ order.customer_name }} | Date: {{ order.order_date }} | Quantity: {{ order.quantity }}</p>
+        <p><a href="http://127.0.0.1:5000/order/">Name: {{ order.customer_name }} | Date: {{ order.order_date }} | Quantity: {{ order.quantity }}</a></p>
     {% endfor %}
 </body>
 </html>
